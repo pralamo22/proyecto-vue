@@ -9,12 +9,19 @@
   <Form :validation-schema="schema" @submit="onSubmit">
     <div class="mb-3">
       <label for="nombre" class="form-label">Nombre</label>
-      <Field type="text" class="form-control" id="nombre" name="nombre" />
+      <Field
+        v-model="nombre"
+        type="text"
+        class="form-control"
+        id="nombre"
+        name="nombre"
+      />
       <ErrorMessage name="nombre">error</ErrorMessage>
     </div>
     <div class="mb-3">
       <label for="email" class="form-label">Email address</label>
       <Field
+        v-model="email"
         type="email"
         class="form-control"
         id="email"
@@ -38,8 +45,15 @@
 import { Form, Field } from "vee-validate";
 import { ErrorMessage } from "vee-validate";
 import { schema } from "../schemas/validationSchema";
+import { useRegistrarStore } from "../stores/registrarStore";
+import { ref } from "vue";
+const registrarStore = useRegistrarStore();
+const nombre = ref("");
+const email = ref("");
+
 const onSubmit = () => {
   alert("El formulario ha sido enviado");
+  registrarStore.guardarRegistro(nombre.value, email.value);
 };
 </script>
 
