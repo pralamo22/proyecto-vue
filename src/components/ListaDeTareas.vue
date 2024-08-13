@@ -1,12 +1,16 @@
 <template>
     <div class="text-center">
-        <h2>Lista de tareas</h2>
+        <h2 class="text-primary">Lista de tareas</h2>
         <input type="text" v-model="nuevaTarea" @keyup.enter="addTarea" />
         <br>
         <ul class="list-group">
             <li v-for="(tarea, index) in tareas" :key="index" class="list-group-item">
-                {{ tarea }}
+                <div>
+                    <div class="fs-3"> {{ tarea }}</div>
+                    <div> <button @click="borrarTarea" class="btn btn-outline-danger">Borrar</button></div>
+                </div>
             </li>
+
         </ul>
     </div>
 </template>
@@ -19,6 +23,9 @@
         tareas.value.push(nuevaTarea.value);
         nuevaTarea.value = "";
     };
+    const borrarTarea = (index) => {
+        tareas.value.splice(index, 1);
+    }
 </script>
 
 <style scoped>
@@ -30,6 +37,6 @@
     .list-group-item {
         margin: 10px;
         border-radius: 10px;
-        list-style-type: upper-roman;
+
     }
 </style>
