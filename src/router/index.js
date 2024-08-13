@@ -1,4 +1,4 @@
-import Contador from '@/modules/contador/components/Contador.vue'
+import contador from '../modules/contador/components/Contador.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 // import HomeView from '../views/HomeView.vue'
 

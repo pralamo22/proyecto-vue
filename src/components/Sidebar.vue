@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <div class="sidebar">
+  <div class="sidebar axVH">
     <h2>Barra lateral</h2>
     <ul>
       <li>
@@ -23,5 +23,8 @@
   width: 200px;
   background-color: antiquewhite;
   padding: 20px;
+}
+.axVH {
+  min-height: 100vh;
 }
 </style>
