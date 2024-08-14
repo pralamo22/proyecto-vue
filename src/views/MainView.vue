@@ -9,9 +9,15 @@
       <input type="text" v-model="texto">
       {{ texto }}
     </div>
+
+  </div>
+
+  <div>
+    <h3>Propiedades computadas</h3>
+    <input type="text" v-model="valor">
+    {{ valor }}
   </div>
 </template>
-
 <script setup>
   import Sidebar from "../components/Sidebar.vue";
   import Header from "@/components/Header.vue";
