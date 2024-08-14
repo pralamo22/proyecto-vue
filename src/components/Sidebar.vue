@@ -1,6 +1,7 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div class="sidebar axVH">
+    <br /><br />
     <h2>Bienvenido</h2>
     <br />
     <h5>Nombre: {{ registrarStore.nombre }}</h5>
@@ -21,19 +22,19 @@
 </template>
 
 <script setup>
-  import { useRegistrarStore } from "@/modules/registrar/stores/registrarStore";
+import { useRegistrarStore } from "@/modules/registrar/stores/registrarStore";
 
-  const registrarStore = useRegistrarStore();
+const registrarStore = useRegistrarStore();
 </script>
 
 <style lang="css" scoped>
-  .sidebar {
-    width: 350px;
-    background-color: antiquewhite;
-    padding: 20px;
-  }
+.sidebar {
+  width: 350px;
+  background-color: antiquewhite;
+  padding: 20px;
+}
 
-  .axVH {
-    min-height: 100vh;
-  }
+.axVH {
+  min-height: 100vh;
+}
 </style>
