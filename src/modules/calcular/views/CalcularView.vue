@@ -2,9 +2,14 @@
     <div>
         <h3>Propiedades computadas</h3>
         <input type="text" v-model="valor">
+
         {{ valor*3 }}
         {{ valorCalculado}}
-        <ResultadoSection :resultado="valorCalculado"></ResultadoSection>
+        <br>
+        <h4>V-Show</h4>
+        <div>
+            <ResultadoSection v-show="mostrarElemento" :resultado="valorCalculado">ResultadoSection</ResultadoSection>
+        </div>
     </div>
 </template>
 
@@ -15,6 +20,10 @@
     const valorCalculado = computed(() => {
         return valor.value * 3
 
+    });
+
+    const mostrarElemento = computed(() => {
+        return valor.value > 10;
     });
 </script>
 
